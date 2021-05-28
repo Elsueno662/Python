@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beginner</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<h1>Parent specific content</h1>
+{% for p in prod %}
+    <ul>
+        <li>
+            {{ p.id }}
+            {{ p.product_name }}
+            {{ p.price }}
+        </li>
+    </ul>
+{% endfor %}
+<br>
+{% block content %}
+
+{% endblock content %}
+
+</body>
+</html>
