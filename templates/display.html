@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <h2><u>Book Details</u></h2><br>
+        <a href="{% url 'add' %}" class="btn btn-sm btn-info">Add Book</a>
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Price</th>
+                    <th style="text-align:center">ACTION</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in dataset %}
+                    <tr>
+                        <td>{{ data.id }}</td>
+                        <td>{{ data.title }}</td>
+                        <td>{{ data.author }}</td>
+                        <td>{{ data.price }}</td>
+                        <td style="text-align:center">
+                            <a href="update/{{ data.id }}" class="btn btn-sm btn-info">Update</a>
+                            <a href="delete/{{ data.id }}" class="btn btn-sm btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock content %}

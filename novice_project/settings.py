@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'beginner.apps.BeginnerConfig',
+    'book_app.apps.BookAppConfig',
+    'book_app_c.apps.BookAppCConfig',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
