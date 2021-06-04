@@ -3,7 +3,7 @@
 {% block content %}
     <div class="container mt-3">
         <h2><u>Update Book</u></h2><br>
-        <form action="/update/{{ book.id }}" method="POST">
+        <form action="{% url 'book_update' book.id %}" method="POST">
             {% csrf_token %}
             <div class="form-group">
                 <label for="">Title</label>

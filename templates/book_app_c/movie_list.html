@@ -2,7 +2,7 @@
 
 {% block content %}
         <h2><u>Movie Details</u></h2><br>
-        <a href="{% url 'movie-add' %}" class="btn btn-sm btn-info">Add Movie</a>
+        <a href="{% url 'movie_add' %}" class="btn btn-sm btn-info">Add Movie</a>
         <table class="table table-hover table-bordered">
             <thead>
                 <tr>
@@ -21,8 +21,8 @@
                         <td>{{ movie.director }}</td>
                         <td>{{ movie.imdb_rating }}</td>
                         <td style="text-align:center">
-                            <a href="movie/{{ movie.id }}/update/" class="btn btn-sm btn-info">Update</a>
-                            <a href="movie/{{ movie.id }}/delete/" class="btn btn-sm btn-danger">Delete</a>
+                            <a href="{% url 'movie_update' movie.id %}" class="btn btn-sm btn-info">Update</a>
+                            <a href="{% url 'movie_delete' movie.id %}" class="btn btn-sm btn-danger">Delete</a>
                         </td>
                     </tr>
                 {% endfor %}

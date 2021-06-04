@@ -2,7 +2,7 @@
 
 {% block content %}
         <h2><u>Book Details</u></h2><br>
-        <a href="{% url 'add' %}" class="btn btn-sm btn-info">Add Book</a>
+        <a href="{% url 'book_add' %}" class="btn btn-sm btn-info">Add Book</a>
         <table class="table table-hover table-bordered">
             <thead>
                 <tr>
@@ -21,8 +21,8 @@
                         <td>{{ data.author }}</td>
                         <td>{{ data.price }}</td>
                         <td style="text-align:center">
-                            <a href="update/{{ data.id }}" class="btn btn-sm btn-info">Update</a>
-                            <a href="delete/{{ data.id }}" class="btn btn-sm btn-danger">Delete</a>
+                            <a href="{% url 'book_update' data.id %}" class="btn btn-sm btn-info">Update</a>
+                            <a href="{% url 'book_delete' data.id %}" class="btn btn-sm btn-danger">Delete</a>
                         </td>
                     </tr>
                 {% endfor %}
