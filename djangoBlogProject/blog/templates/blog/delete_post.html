@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h3>Are you want to delete the post entitled "{{ post.title }}"?</h3>
+        <p class="text-danger">This action cannot be undone.</p>
+        <p>
+            <input type="submit" value="Yes" />
+            <a href="{% url 'post_detail' post.slug %}">Cancel</a>
+        </p>
+    </form>
+{% endblock content %}
